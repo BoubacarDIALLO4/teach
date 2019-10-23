@@ -1,0 +1,33 @@
+# Un playbook est un tableau de play
+
+- hosts: all
+  tasks:
+    - name: Install VIM everywhere !
+      apt: 
+         name: vim
+         state: present
+    - name: Install TMUX everywhere !
+      apt: 
+         name: tmux
+         state: present
+    - name: Install Message of the day
+      copy:
+         src: loutre.txt
+         dest: /etc/motd
+    - name: Install Python-pip everywhere !
+      apt:
+         name: python-pip
+         state: latest
+
+
+- hosts: app
+  tasks:
+    - name: Install Apache everywhere !
+      apt:
+         name: apache2
+         state: present
+
+- hosts: db
+
+    
+          
