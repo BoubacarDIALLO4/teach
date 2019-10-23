@@ -1,0 +1,32 @@
+# Test module avec ansible
+
+- name: test play
+  hosts: all
+
+  tasks:
+    - shell: cat /etc/motd
+      register: motd_contents
+ 
+
+    - shell: echo "modt contents the word hello"
+      when: motd_contents.stdout.find('hi') !=-1
+        
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
